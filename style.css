@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+:root {
+  --cursor-size: 24px;
+  --background: #f2f2f2;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  display: block;
+}
+ul {
+  list-style: none;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: var(--background);
+  font-family: "Inter";
+}
+button {
+  outline: none;
+  border: none;
+  background: inherit;
+  color: currentcolor;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  z-index: 2;
+}
+a {
+  text-decoration: none;
+  color: currentcolor;
+}
+main {
+  height: 100%;
+}
+
+.btn {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+.btn svg {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+[data-hover] {
+  position: relative;
+}
+[data-hover] [data-hover-bounds] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  inset: 0;
+  /* 		outline: 1px solid red; */
+}
+[data-hover]:hover [data-hover-bounds] {
+  transform: scale(4);
+}
+.cursor {
+  z-index: 4;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border-radius: 50%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  background: blueviolet;
+  mix-blend-mode: hard-light;
+  pointer-events: none;
+}
+.cta {
+  width: 100px;
+  position: fixed;
+  top: -999px;
+  left: -999px;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+.hero_overlay {
+  background-image: url("/bg.svg");
+  background-size: cover;
+  height: 100vh;
+}
+header {
+  z-index: 2;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo_container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: #f2f2f2;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  padding: 5px 25px;
+  border-radius: 65px;
+}
+.logo_container .logo {
+  border-radius: 50%;
+  overflow: hidden;
+}
+header > .button_container {
+  background-color: #f2f2f2;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  padding: 25px;
+  overflow: hidden;
+  border-radius: 50%;
+  height: fit-content;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 70%;
+  padding: 35px;
+  margin-left: 40px;
+  margin-top: 180px;
+  border-radius: 60px;
+}
+.content > p {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.content > p::first-letter {
+  font-size: 4rem;
+  font-weight: bold;
+  color: darkorchid;
+}
